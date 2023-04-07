@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CL3_POOII_JosueDanielChupicaInga.Models.reporte>
+
+@{
+    ViewBag.Title = "Reportes";
+}
+
+<h2>Reporte</h2>
+
+@using (Html.BeginForm())
+{ 
+    <span>Año</span>
+    <input type="text" name="y" value="@ViewBag.y" />
+    <input type="submit" value="Procesar" />
+}
+
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idAlum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApeAlum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombAlum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExParcial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExFinal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prom)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idAlum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApeAlum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombAlum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExParcial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExFinal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prom)
+        </td>
+    </tr>
+}
+
+</table>
